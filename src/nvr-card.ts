@@ -15,14 +15,8 @@ import { BrowseMedia } from './media-types'
 
 dayjs.extend(customParseFormat);
 
-declare global {
-  interface Window {
-    customCards: Array<Object>;
-  }
-}
-
-window.customCards = window.customCards || [];
-window.customCards.push({
+(window as any).customCards = (window as any).customCards || [];
+(window as any).customCards.push({
   type: "nvr-card",
   name: "NVR Card",
   description: "Display Recordings from Media Source",
