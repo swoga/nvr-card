@@ -23,8 +23,11 @@ dayjs.extend(customParseFormat);
 
 interface Config extends LovelaceCardConfig {
   header: string;
-  entity: string;
+  content_id: string;
+  folder_format: string;
+  file_name_format: string;
   start_at: number;
+  display_format: string;
 }
 
 interface PlayMedia {
