@@ -1,10 +1,9 @@
-import { html, LitElement, TemplateResult, nothing, svg, PropertyValueMap } from "lit";
+import { html, LitElement, nothing, PropertyValueMap } from "lit";
 import { styles } from "./card.styles";
 import { state, customElement} from "lit/decorators"
 import { classMap } from "lit/directives/class-map"
 import { styleMap } from "lit/directives/style-map"
 
-import { HassEntity } from "home-assistant-js-websocket";
 import { HomeAssistant, LovelaceCardConfig } from "custom-card-helpers";
 
 import dayjs from 'dayjs';
