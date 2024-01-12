@@ -1,6 +1,6 @@
 {
-  "source": "src/index.ts",
-  "module": "dist/card.js",
+  "source": "src/nvr-card.ts",
+  "module": "dist/nvr-card.js",
   "targets": {
     "module": {
       "includeNodeModules": true

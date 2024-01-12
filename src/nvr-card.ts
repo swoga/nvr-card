@@ -1,6 +1,6 @@
 import { html, LitElement, TemplateResult, nothing, svg, PropertyValueMap } from "lit";
 import { styles } from "./card.styles";
-import { state } from "lit/decorators/state";
+import { state, customElement} from "lit/decorators"
 import { classMap } from "lit/directives/class-map"
 import { styleMap } from "lit/directives/style-map"
 
@@ -13,6 +13,19 @@ import customParseFormat from 'dayjs/plugin/customParseFormat'
 import { DigitalPTZ } from './digital-ptz'
 
 dayjs.extend(customParseFormat);
+
+declare global {
+  interface Window {
+    customCards: Array<Object>;
+  }
+}
+
+window.customCards = window.customCards || [];
+window.customCards.push({
+  type: "nvr-card",
+  name: "NVR Card",
+  description: "Display Recordings from Media Source",
+});
 
 interface Config extends LovelaceCardConfig {
   header: string;
@@ -90,6 +103,7 @@ interface PlayMedia {
 
 const INPUT_DATE_FORMAT = "YYYY-MM-DD";
 
+@customElement('nvr-card')
 export class NVRCard extends LitElement {
   // internal reactive states
   @state() private _header: string | typeof nothing;
