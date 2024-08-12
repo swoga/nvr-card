@@ -62,6 +62,10 @@ export const styles = css`
     height: 100%;
   }
 
+  .footer {
+    padding: 16px;
+  }
+
   .videos {
     display:flex;
     flex-wrap:wrap;
