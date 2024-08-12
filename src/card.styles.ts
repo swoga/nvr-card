@@ -1,6 +1,9 @@
 import { css } from "lit";
 
 export const styles = css`
+  ha-card {
+    overflow: hidden;
+  }
   .error {
     color: red;
   }

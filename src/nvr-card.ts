@@ -101,12 +101,12 @@ export class NVRCard extends LitElement {
 
     return html`
       <ha-card header="${this._header}">
-        <div class="card-content">
-          <div class="player" style=${styleMap({display: this._selected_video ? 'block':'none'})}>
-            <div class="ptz-transform">
-              <video src="${this._selected_video}${this._start_at ? `#t=${this._start_at}` : '' }" autoplay controls playsinline preload="auto"/>
-            </div>
+        <div class="player" style=${styleMap({display: this._selected_video ? 'block':'none'})}>
+          <div class="ptz-transform">
+            <video src="${this._selected_video}${this._start_at ? `#t=${this._start_at}` : '' }" autoplay controls playsinline preload="auto"/>
           </div>
+        </div>
+        <div class="card-content">
           <div class="date-selector">
             <ha-icon @click="${this.prevDate}" icon="mdi:arrow-left"></ha-icon>
             <input type="date" .value="${this._selected_date}" @change="${this.handleDateChange}" />
